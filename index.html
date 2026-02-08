@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="CSSR-Nav: Culturally Sensitive Social Robot Navigation Using Open-Source Vision-Language Models and Empirical Cultural Knowledge">
+  <meta name="keywords" content="social robot navigation, cultural sensitivity, VLM, LLaVA, Pepper robot, Rwanda, CSSR4Africa">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="CSSR-Nav: Culturally Sensitive Social Robot Navigation" />
+  <meta property="og:description" content="The first integration of empirically-derived African cultural norms into autonomous social robot navigation." />
+  <meta property="og:type" content="website" />
+
+  <title>CSSR-Nav: Culturally Sensitive Social Robot Navigation</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <!-- JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://cssr4africa.github.io">
+        <span class="icon"><i class="fas fa-home"></i></span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero: Title & Authors -->
+<section class="hero is-cssr">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+
+          <h1 class="title is-1 publication-title">
+            <span class="cssr-nav">CSSR-Nav</span>: Culturally Sensitive Social Robot Navigation Using Open-Source Vision-Language Models and Empirical Cultural Knowledge
+          </h1>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="mailto:bgirmash@andrew.cmu.edu">Birhanu Shimelis Girma</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="mailto:ioj@andrew.cmu.edu">Ibrahim Jimoh</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="mailto:assaneg@andrew.cmu.edu">Assane Gueye</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="mailto:david@vernon.eu">David Vernon</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Carnegie Mellon University Africa, Kigali, Rwanda</span>
+          </div>
+
+          <div class="is-size-6 publication-venue" style="margin-top: 0.5rem;">
+            <span>CSSR4Africa &mdash; Culturally Sensitive Social Robotics for Africa</span>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="column has-text-centered" style="margin-top: 1.5rem;">
+            <div class="publication-links">
+              <!-- Paper PDF -->
+              <span class="link-block">
+                <a href="assets/paper.pdf" class="button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- arXiv -->
+              <span class="link-block">
+                <a href="#" class="button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="ai ai-arxiv"></i></span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code -->
+              <span class="link-block">
+                <a href="https://github.com/cssr4africa/csi_nav" class="button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Code</span>
+                </a>
+              </span>
+              <!-- Project Page -->
+              <span class="link-block">
+                <a href="https://cssr4africa.github.io" class="button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-globe"></i></span>
+                  <span>CSSR4Africa</span>
+                </a>
+              </span>
+              <!-- Video -->
+              <span class="link-block">
+                <a href="#videos" class="button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-video"></i></span>
+                  <span>Video</span>
+                </a>
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Teaser Video -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="video-placeholder">
+        <i class="fas fa-video"></i>
+        <p><strong>Teaser Video Coming Soon</strong></p>
+        <p style="font-size: 0.9rem;">Place your teaser video as <code>assets/teaser.mp4</code></p>
+      </div>
+      <!-- Uncomment when video is ready:
+      <video id="teaser" autoplay muted loop playsinline height="100%" width="100%" style="border-radius: 10px;">
+        <source src="assets/teaser.mp4" type="video/mp4">
+      </video>
+      -->
+      <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
+        <span class="cssr-nav">CSSR-Nav</span> enables a Pepper robot to navigate while respecting
+        Rwandan cultural norms &mdash; maintaining personal space, avoiding conversation interruptions,
+        passing behind groups, and greeting with a respectful bow.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- Abstract -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Social robot navigation in culturally diverse environments demands more than collision avoidance;
+            it requires robots to understand and respect local social norms that govern human spatial behavior.
+            Current approaches rely on generic Western social conventions and cloud-based proprietary models,
+            limiting their applicability in non-Western contexts and resource-constrained settings.
+          </p>
+          <p>
+            We present <span class="cssr-nav">CSSR-Nav</span>, the first social robot navigation system that
+            integrates empirically-derived African cultural norms into autonomous navigation. Based on a survey
+            of <strong>143 Rwandan respondents</strong>, we encode seven navigation-relevant cultural norms into
+            a three-component architecture: (1) a <strong>LLaVA-based perception pipeline</strong> combining
+            YOLOv8 detection at 15 Hz with vision-language social reasoning every 3 seconds,
+            (2) a <strong>Rwandan Social Costmap Layer</strong> that translates cultural norms into navigation
+            costs using Gaussian personal space models and directional preference fields, and
+            (3) a <strong>Cultural Behavior Coordinator</strong> that triggers appropriate greetings
+            (&ldquo;Muraho!&rdquo;) and respectful gestures.
+          </p>
+          <p>
+            Deployed on a SoftBank Pepper robot with an NVIDIA Jetson Orin Nano, our system runs entirely
+            at the edge without cloud dependencies. We design a comprehensive 10-condition ablation study
+            to isolate the contribution of each cultural norm to navigation performance and social compliance.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Key Contributions -->
+<section class="section" style="background-color: #f9fafb;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Key Contributions</h2>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="highlight-box">
+          <ul class="contributions-list">
+            <li>First integration of empirically-derived <strong>African cultural norms</strong> (from 143 Rwandan survey respondents) into autonomous social robot navigation</li>
+            <li>Three-component architecture combining <strong>LLaVA perception</strong>, a <strong>Rwandan Social Costmap Layer</strong>, and a <strong>Cultural Behavior Coordinator</strong></li>
+            <li>Fully <strong>edge-deployed</strong> system on NVIDIA Jetson Orin Nano &mdash; no cloud dependencies or proprietary APIs</li>
+            <li>Comprehensive <strong>10-condition ablation study</strong> design to evaluate individual cultural norm contributions</li>
+            <li>Open-source <strong>ROS costmap_2d plugin</strong> that integrates with standard navigation stacks without algorithmic changes</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- System Architecture -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">System Architecture</h2>
+        <p class="subtitle">Three integrated components for culturally-aware navigation</p>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-full-width has-text-centered">
+        <img src="static/images/rwandan_social_layer_architecture.png"
+             alt="CSSR-Nav System Architecture"
+             class="architecture-image"
+             style="max-width: 100%;">
+      </div>
+    </div>
+
+    <!-- Component Cards -->
+    <div class="columns is-centered" style="margin-top: 2rem;">
+      <div class="column is-one-third">
+        <div class="component-card">
+          <h4><i class="fas fa-eye"></i> LLaVA Perception</h4>
+          <p>Two-stage pipeline: YOLOv8 runs at <strong>15 Hz</strong> for fast person detection, while LLaVA performs social reasoning every <strong>3 seconds</strong> to identify groups, elders, and social interactions.</p>
+          <p style="margin-top: 0.5rem;"><small>ByteTrack for robust person ID persistence</small></p>
+        </div>
+      </div>
+      <div class="column is-one-third">
+        <div class="component-card">
+          <h4><i class="fas fa-map"></i> Social Costmap Layer</h4>
+          <p>ROS costmap_2d plugin encoding <strong>7 cultural norms</strong> as navigation costs: Gaussian personal space, lethal group interaction zones, directional preferences, and elder respect zones.</p>
+          <p style="margin-top: 0.5rem;"><small>Integrates with standard move_base</small></p>
+        </div>
+      </div>
+      <div class="column is-one-third">
+        <div class="component-card">
+          <h4><i class="fas fa-handshake"></i> Behavior Coordinator</h4>
+          <p>State machine managing <strong>cultural behaviors</strong>: Kinyarwanda greetings (&ldquo;Muraho!&rdquo;), respectful bowing gestures, and velocity scaling near people.</p>
+          <p style="margin-top: 0.5rem;"><small>States: IDLE &rarr; NAVIGATING &rarr; GREETING &rarr; YIELDING</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Cultural Norms -->
+<section class="section" style="background-color: #f9fafb;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Rwandan Cultural Norms</h2>
+        <p class="subtitle">Seven navigation-relevant norms from a survey of 143 Rwandan respondents</p>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column">
+        <table class="cultural-norms-table">
+          <thead>
+            <tr>
+              <th>Norm ID</th>
+              <th>Cultural Norm</th>
+              <th>Implementation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="norm-badge">3-1</span></td>
+              <td>Maintain &le;1m personal space</td>
+              <td>Gaussian cost (&sigma;<sub>i</sub>=0.5m intimate, &sigma;<sub>p</sub>=1.0m personal)</td>
+            </tr>
+            <tr>
+              <td><span class="norm-badge">2-26</span></td>
+              <td>Don't walk between conversing people</td>
+              <td>Lethal cost (254) in interaction zone</td>
+            </tr>
+            <tr>
+              <td><span class="norm-badge">3-3</span></td>
+              <td>Pass behind groups, not in front</td>
+              <td>Asymmetric costs: front &times;1.5, back &times;0.7</td>
+            </tr>
+            <tr>
+              <td><span class="norm-badge">2-27</span></td>
+              <td>Don't walk ahead of elders</td>
+              <td>2m &times; 2m zone with cost 180 ahead of elder</td>
+            </tr>
+            <tr>
+              <td><span class="norm-badge">2-11</span></td>
+              <td>Approach to greet (don't wave from afar)</td>
+              <td>Approaching behavior activation</td>
+            </tr>
+            <tr>
+              <td><span class="norm-badge">2-18</span></td>
+              <td>Begin interactions with greeting</td>
+              <td>&ldquo;Muraho!&rdquo; &mdash; Kinyarwanda greeting on approach</td>
+            </tr>
+            <tr>
+              <td><span class="norm-badge">2-9</span></td>
+              <td>Bow when greeting</td>
+              <td>Respectful bow gesture triggered on approach</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Perception Pipeline -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Perception Pipeline</h2>
+        <p class="subtitle">Two-stage detection and social reasoning</p>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-full-width has-text-centered">
+        <img src="static/images/perception_timing_diagram.png"
+             alt="Perception Timing Diagram"
+             class="architecture-image"
+             style="max-width: 100%;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Cultural Cost Functions -->
+<section class="section" style="background-color: #f9fafb;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Cultural Cost Functions</h2>
+        <p class="subtitle">Mathematical formulations translating cultural norms into navigation costs</p>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-full-width has-text-centered">
+        <img src="static/images/cultural_cost_functions.png"
+             alt="Cultural Cost Functions Visualization"
+             class="architecture-image"
+             style="max-width: 100%;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Hardware Platform -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Hardware Platform</h2>
+        <p class="subtitle">Fully edge-deployed on SoftBank Pepper</p>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="specs-grid">
+          <div class="spec-item">
+            <i class="fas fa-robot"></i>
+            <div class="spec-label">Robot</div>
+            <div class="spec-value">SoftBank Pepper</div>
+            <div><small>1.21m, 28kg</small></div>
+          </div>
+          <div class="spec-item">
+            <i class="fas fa-camera"></i>
+            <div class="spec-label">Camera</div>
+            <div class="spec-value">Intel RealSense D435</div>
+            <div><small>RGB-D, 640&times;480 @ 30fps</small></div>
+          </div>
+          <div class="spec-item">
+            <i class="fas fa-broadcast-tower"></i>
+            <div class="spec-label">LiDAR</div>
+            <div class="spec-value">YDLidar G4</div>
+            <div><small>360&deg;, 10m range, 12Hz</small></div>
+          </div>
+          <div class="spec-item">
+            <i class="fas fa-microchip"></i>
+            <div class="spec-label">Compute</div>
+            <div class="spec-value">Jetson Orin Nano</div>
+            <div><small>8GB RAM, 1024 CUDA cores</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Behavior State Machine -->
+<section class="section" style="background-color: #f9fafb;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Behavior State Machine</h2>
+        <p class="subtitle">Cultural behavior coordination across navigation states</p>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-full-width has-text-centered">
+        <img src="static/images/behavior_state_machine.png"
+             alt="Behavior State Machine"
+             class="architecture-image"
+             style="max-width: 90%;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Video Results -->
+<section class="section" id="videos">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video Results</h2>
+        <p class="subtitle">Demonstrations of culturally-aware navigation</p>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-one-third">
+        <div class="video-placeholder">
+          <i class="fas fa-video"></i>
+          <p><strong>Personal Space</strong></p>
+          <p style="font-size: 0.85rem;">Respecting personal distance norms</p>
+        </div>
+        <!-- Uncomment when video is ready:
+        <video autoplay muted loop playsinline width="100%" style="border-radius: 10px;">
+          <source src="assets/personal_space.mp4" type="video/mp4">
+        </video>
+        -->
+      </div>
+      <div class="column is-one-third">
+        <div class="video-placeholder">
+          <i class="fas fa-video"></i>
+          <p><strong>Group Avoidance</strong></p>
+          <p style="font-size: 0.85rem;">Passing behind conversing groups</p>
+        </div>
+        <!-- Uncomment when video is ready:
+        <video autoplay muted loop playsinline width="100%" style="border-radius: 10px;">
+          <source src="assets/group_avoidance.mp4" type="video/mp4">
+        </video>
+        -->
+      </div>
+      <div class="column is-one-third">
+        <div class="video-placeholder">
+          <i class="fas fa-video"></i>
+          <p><strong>Greeting Behavior</strong></p>
+          <p style="font-size: 0.85rem;">&ldquo;Muraho!&rdquo; with bow gesture</p>
+        </div>
+        <!-- Uncomment when video is ready:
+        <video autoplay muted loop playsinline width="100%" style="border-radius: 10px;">
+          <source src="assets/greeting.mp4" type="video/mp4">
+        </video>
+        -->
+      </div>
+    </div>
+
+    <div class="columns is-centered" style="margin-top: 1rem;">
+      <div class="column is-one-third">
+        <div class="video-placeholder">
+          <i class="fas fa-video"></i>
+          <p><strong>Elder Respect</strong></p>
+          <p style="font-size: 0.85rem;">Yielding to elders on the path</p>
+        </div>
+      </div>
+      <div class="column is-one-third">
+        <div class="video-placeholder">
+          <i class="fas fa-video"></i>
+          <p><strong>Full Navigation</strong></p>
+          <p style="font-size: 0.85rem;">All norms active in real environment</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Ablation Study -->
+<section class="section" style="background-color: #f9fafb;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Ablation Study Design</h2>
+        <p class="subtitle">10-condition evaluation isolating individual cultural norm contributions</p>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column">
+        <table class="cultural-norms-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Condition</th>
+              <th>Active Norms</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>00</td>
+              <td>Full CSSR-Nav</td>
+              <td>All</td>
+              <td>Complete system baseline</td>
+            </tr>
+            <tr>
+              <td>01</td>
+              <td>No Cultural Norms</td>
+              <td>None</td>
+              <td>Standard navigation baseline</td>
+            </tr>
+            <tr>
+              <td>02</td>
+              <td>Personal Space Only</td>
+              <td>3-1</td>
+              <td>Isolate proxemic effect</td>
+            </tr>
+            <tr>
+              <td>03</td>
+              <td>Group Avoidance Only</td>
+              <td>2-26</td>
+              <td>Isolate group awareness</td>
+            </tr>
+            <tr>
+              <td>04</td>
+              <td>Pass Behind Only</td>
+              <td>3-3</td>
+              <td>Isolate directional preference</td>
+            </tr>
+            <tr>
+              <td>05</td>
+              <td>Elder Respect Only</td>
+              <td>2-27</td>
+              <td>Isolate elder deference</td>
+            </tr>
+            <tr>
+              <td>06</td>
+              <td>Behaviors Only</td>
+              <td>Greetings / gestures</td>
+              <td>Isolate behavioral norms</td>
+            </tr>
+            <tr>
+              <td>07</td>
+              <td>Costmap Only</td>
+              <td>All spatial norms</td>
+              <td>Navigation without behaviors</td>
+            </tr>
+            <tr>
+              <td>08</td>
+              <td>PS + Behaviors</td>
+              <td>3-1 + behaviors</td>
+              <td>Combined interaction effect</td>
+            </tr>
+            <tr>
+              <td>09</td>
+              <td>No LLaVA</td>
+              <td>Most norms</td>
+              <td>VLM degradation analysis</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Acknowledgments -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 has-text-centered">Acknowledgments</h2>
+        <div class="content has-text-justified">
+          <p>
+            This work is part of the
+            <a href="https://cssr4africa.github.io" style="color: #1a6b3c;"><strong>CSSR4Africa</strong></a>
+            (Culturally Sensitive Social Robotics for Africa) project at Carnegie Mellon University Africa.
+            We thank the 143 Rwandan survey respondents whose insights form the empirical foundation of this work.
+            We also thank the ROS and open-source robotics community for the navigation stack upon which our
+            costmap plugin is built.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BibTeX -->
+<section class="section" id="BibTeX" style="background-color: #f9fafb;">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3 has-text-centered">BibTeX</h2>
+    <div class="bibtex-box">
+<pre>@inproceedings{girma2025cssrnav,
+  title     = {CSSR-Nav: Culturally Sensitive Social Robot Navigation Using
+               Open-Source Vision-Language Models and Empirical Cultural Knowledge},
+  author    = {Girma, Birhanu Shimelis and Jimoh, Ibrahim and Gueye, Assane and Vernon, David},
+  year      = {2025},
+  url       = {https://github.com/cssr4africa/csi_nav}
+}</pre>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer" style="padding: 1.5rem;">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+        <a href="https://cssr4africa.github.io" class="icon-link" style="color: #1a6b3c;">
+          <i class="fas fa-globe"></i>
+        </a>
+        &nbsp;
+        <a href="https://github.com/cssr4africa/csi_nav" class="icon-link" style="color: #333;">
+          <i class="fab fa-github"></i>
+        </a>
+      </p>
+      <p style="font-size: 0.85rem; color: #999;">
+        This website template is adapted from <a href="https://nerfies.github.io" style="color: #999;">Nerfies</a>
+        and licensed under
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/" style="color: #999;">CC BY-SA 4.0</a>.
+      </p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

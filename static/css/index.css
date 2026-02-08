@@ -1,0 +1,265 @@
+/* CSSR-Nav Academic Page Styles */
+
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.footer .icon-link {
+  font-size: 25px;
+  color: #000;
+}
+
+.footer .icon-link:hover {
+  color: #1a6b3c;
+}
+
+.link-block a {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.teaser {
+  font-family: 'Google Sans', sans-serif;
+}
+
+.teaser .hero-body {
+  padding-top: 0;
+  padding-bottom: 2rem;
+}
+
+.publication-title {
+  font-family: 'Google Sans', sans-serif;
+}
+
+.publication-authors {
+  font-family: 'Google Sans', sans-serif;
+}
+
+.publication-authors a {
+  color: #1a6b3c;
+  text-decoration: none;
+}
+
+.publication-authors a:hover {
+  text-decoration: underline;
+}
+
+.publication-venue {
+  color: #555;
+}
+
+.author-block {
+  display: inline-block;
+}
+
+.publication-video {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.publication-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.results-carousel .item video {
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+/* Cultural norms table */
+.cultural-norms-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+}
+
+.cultural-norms-table thead {
+  background-color: #1a6b3c;
+  color: white;
+}
+
+.cultural-norms-table th,
+.cultural-norms-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.cultural-norms-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.cultural-norms-table tbody tr:hover {
+  background-color: #e8f5e9;
+}
+
+/* Hero custom */
+.hero.is-cssr {
+  background: linear-gradient(135deg, #f5f7fa 0%, #e8f5e9 100%);
+}
+
+/* Section divider */
+.section-divider {
+  height: 3px;
+  background: linear-gradient(to right, transparent, #1a6b3c, transparent);
+  margin: 0 auto;
+  max-width: 200px;
+}
+
+/* Architecture diagram */
+.architecture-image {
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Video placeholder */
+.video-placeholder {
+  background: #f0f0f0;
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+  padding: 3rem;
+  text-align: center;
+  color: #999;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-placeholder i {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* Highlight box */
+.highlight-box {
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  border-left: 4px solid #1a6b3c;
+  padding: 1.5rem;
+  border-radius: 0 8px 8px 0;
+  margin: 1.5rem 0;
+}
+
+/* Key contributions list */
+.contributions-list {
+  list-style: none;
+  padding: 0;
+}
+
+.contributions-list li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.contributions-list li::before {
+  content: "\f00c";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  color: #1a6b3c;
+}
+
+/* CSSR-Nav name styling */
+.cssr-nav {
+  font-family: 'Google Sans', monospace;
+  font-weight: 700;
+}
+
+/* Norm ID badges */
+.norm-badge {
+  display: inline-block;
+  background: #1a6b3c;
+  color: white;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* Component cards */
+.component-card {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  height: 100%;
+  border-top: 3px solid #1a6b3c;
+}
+
+.component-card h4 {
+  color: #1a6b3c;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+/* BibTeX box */
+.bibtex-box {
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 1rem;
+  position: relative;
+}
+
+.bibtex-box pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-all;
+  font-size: 0.85rem;
+}
+
+/* Hardware specs */
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.spec-item {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.spec-item i {
+  font-size: 1.5rem;
+  color: #1a6b3c;
+  margin-bottom: 0.5rem;
+}
+
+.spec-item .spec-label {
+  font-size: 0.8rem;
+  color: #888;
+  text-transform: uppercase;
+}
+
+.spec-item .spec-value {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .cultural-norms-table {
+    font-size: 0.8rem;
+  }
+  .cultural-norms-table th,
+  .cultural-norms-table td {
+    padding: 0.4rem 0.5rem;
+  }
+}
